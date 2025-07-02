@@ -1,211 +1,309 @@
-/* --- Pengaturan Global dan Font --- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    font-family: 'Inter', sans-serif; /* Placeholder untuk Freesans */
-    background-color: #E8E5D9; /* Latar belakang default untuk header */
-    color: #1a1a1a;
-    line-height: 1.5;
-}
+        body {
+            font-family: 'FreeSans', sans-serif;
+            background-color: #E8E5D9;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
 
-/* --- Bagian 1: Header Layar Penuh --- */
-.fullscreen-header {
-    height: 100vh; /* Mengisi tinggi layar penuh */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
+        @font-face {
+        font-family: 'Freesans';
+        src: url('fonts/FreeSans.otf') format('opentype');
+        /* font-weight: normal; atau 400  */
+        }
+        
+        @font-face {
+        font-family: 'Freesans';
+        src: url('font/FreeSansBold.otf') format('opentype');
+        font-weight: bold; /* atau 700 */
+        }
 
-.header-title {
-    font-size: 20vw; /* Ukuran font responsif berdasarkan lebar layar */
-    font-weight: 900;
-    line-height: 0.85;
-    letter-spacing: -0.05em; /* Jarak antar huruf lebih rapat */
-    text-transform: uppercase;
-    color: #1a1a1a;
-}
+        /* --- Header dengan Navigasi --- */
+        .header {
+            background-color: rgba(120, 120, 120, 0.9);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-/* --- Bagian 2: Konten Utama --- */
-.portfolio-content-wrapper {
-    background-color: #CCC8AA; /* Latar belakang baru untuk semua konten di bawah header */
-    padding: 60px 0;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-.main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
 
-/* --- Judul Seksi --- */
-.portfolio-section {
-    margin-bottom: 60px;
-}
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
 
-/* Judul untuk "Social Media Designs" */
-#social-media-section .section-title-container {
-    background-color: #D9D5C7;
-    padding: 15px 20px;
-    margin-bottom: 30px;
-    display: inline-block;
-}
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
 
-#social-media-section .section-title {
-    font-size: 2.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
 
-#social-media-section .section-subtitle {
-    font-size: 1rem;
-    color: #555;
-}
+        .nav-links a:hover {
+            color: #ddd;
+        }
 
+        .nav-links a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+        }
 
-/* --- Card Khusus untuk "Personal Works" --- */
-.personal-works-section {
-    background-color: #F1EFEF; /* Latar belakang baru yang spesifik */
-    border-radius: 12px;
-    padding: 40px; /* Padding di dalam card */
-    margin-top: 80px; /* Jarak dari seksi sebelumnya */
-    /* Dibuat "lebih kecil" dengan max-width dan margin auto */
-    max-width: 95%; 
-    margin-left: auto;
-    margin-right: auto;
-}
+        /* --- Bagian 1: Header dengan Social Media Title --- */
+        .fullscreen-header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 20px 40px 20px;
+            position: relative;
+            background-color: #E8E5D9;
+        }
 
-.personal-works-title .section-title {
-    font-size: 2.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-}
+        .header-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
 
-/* Menghilangkan background dari container judul di dalam personal works */
-.personal-works-title {
-    background-color: transparent;
-    padding: 0;
-    margin-bottom: 30px;
-}
+        .portfolio-subtitle {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
 
+        .header-title {
+            font-size: 15vw;
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: #0f0f0f;
+            position: relative;
+        }
 
-/* --- Grid Gambar dan Placeholder --- */
-.image-grid {
-    display: grid;
-    gap: 20px;
-    margin-bottom: 20px;
-}
+        .portfolio-subtitle-left {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
 
-.grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
+        /* --- Bagian 2: Konten Utama --- */
+        .portfolio-content-wrapper {
+            background-color: #CCC8AA;
+            padding: 60px 0;
+        }
 
-.placeholder {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: #cccccc; /* Warna placeholder jika gambar gagal dimuat */
-}
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        /* --- Judul Seksi --- */
+        .portfolio-section {
+            margin-bottom: 60px;
+        }
 
-/* Aturan Aspek Rasio */
-.aspect-1-1 { aspect-ratio: 1 / 1; }
-.aspect-4-5 { aspect-ratio: 4 / 5; }
-.aspect-a4 { aspect-ratio: 1 / 1.414; }
+        /* Judul untuk "Social Media Designs" */
+        #social-media-section .section-title-container {
+            background-color: #D9D5C7;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
 
+        #social-media-section .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+        }
 
-/* --- Marquee/Running Text --- */
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    margin: 30px 0;
-    /* Menambahkan efek gradien di sisi untuk fade out */
-    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
-    mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
-}
+        #social-media-section .section-subtitle {
+            font-size: 1rem;
+            color: #555;
+        }
 
-.marquee-content {
-    display: flex;
-    width: fit-content;
-    animation: scroll 40s linear infinite;
-}
+        /* --- Card Khusus untuk "Personal Works" --- */
+        .personal-works-section {
+            background-color: #F1EFEF;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 80px;
+            max-width: 95%; 
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.marquee-content .placeholder {
-    flex-shrink: 0;
-    width: 280px;
-    margin: 0 10px;
-}
+        .personal-works-title .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+        }
 
-@keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
+        .personal-works-title {
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 30px;
+        }
 
+        /* --- Grid Gambar dan Placeholder --- */
+        .image-grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
 
-/* --- Grid Khusus (Personal Works Baris 2) --- */
-.mixed-grid {
-    display: grid;
-    grid-template-columns: 1fr 0.8fr 1fr;
-    align-items: center;
-    gap: 20px;
-}
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
+        .placeholder {
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #cccccc;
+        }
 
-/* --- Desain Responsif --- */
-@media (max-width: 900px) {
-    .header-title {
-        font-size: 25vw;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-    .personal-works-title .section-title{
-        font-size: 2rem;
-    }
-    .grid-cols-3, .mixed-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-     .mixed-grid .placeholder:last-child {
-        grid-column: 1 / -1;
-        justify-self: center;
-        width: 50%;
-    }
-    .personal-works-section {
-        padding: 30px;
-    }
-}
+        .placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-@media (max-width: 600px) {
-    .header-title {
-        font-size: 30vw;
-    }
-    .grid-cols-3, .mixed-grid {
-        grid-template-columns: 1fr;
-    }
-    .marquee-content .placeholder {
-        width: 220px;
-    }
-    .mixed-grid .placeholder:last-child {
-        width: 100%;
-    }
-    .personal-works-section {
-        padding: 20px;
-        max-width: 100%;
-    }
-}
+        /* Aturan Aspek Rasio */
+        .aspect-1-1 { aspect-ratio: 1 / 1; }
+        .aspect-4-5 { aspect-ratio: 4 / 5; }
+        .aspect-a4 { aspect-ratio: 1 / 1.414; }
+
+        /* --- Marquee/Running Text --- */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            margin: 30px 0;
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+        }
+
+        .marquee-content {
+            display: flex;
+            width: fit-content;
+            animation: scroll 40s linear infinite;
+        }
+
+        .marquee-content .placeholder {
+            flex-shrink: 0;
+            width: 280px;
+            margin: 0 10px;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* --- Grid Khusus (Personal Works Baris 2) --- */
+        .mixed-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* --- Desain Responsif --- */
+        @media (max-width: 900px) {
+            .header-title {
+                font-size: 20vw;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .personal-works-title .section-title{
+                font-size: 2rem;
+            }
+            .grid-cols-3, .mixed-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .mixed-grid .placeholder:last-child {
+                grid-column: 1 / -1;
+                justify-self: center;
+                width: 50%;
+            }
+            .personal-works-section {
+                padding: 30px;
+            }
+            .portfolio-subtitle {
+                position: static;
+                margin-bottom: 20px;
+            }
+            .portfolio-subtitle-left {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-title {
+                font-size: 25vw;
+            }
+            .grid-cols-3, .mixed-grid {
+                grid-template-columns: 1fr;
+            }
+            .marquee-content .placeholder {
+                width: 220px;
+            }
+            .mixed-grid .placeholder:last-child {
+                width: 100%;
+            }
+            .personal-works-section {
+                padding: 20px;
+                max-width: 100%;
+            }
+            .fullscreen-header {
+                height: 50vh;
+                padding: 40px 20px 30px 20px;
+            }
+        }

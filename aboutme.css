@@ -1,0 +1,296 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'FreeSans', sans-serif; 
+            background-color: #F1EFEF;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @font-face {
+        font-family: 'Freesans';
+        src: url('fonts/FreeSans.otf') format('opentype');
+        /* font-weight: normal; atau 400  */
+        }
+        
+        @font-face {
+        font-family: 'Freesans';
+        src: url('font/FreeSansBold.otf') format('opentype');
+        font-weight: bold; /* atau 700 */
+        }
+
+        .header {
+            background-color: rgba(120, 120, 120, 0.9);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .about-section {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .about-title::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            width: 50px;
+            height: 2px;
+            background-color: #333;
+        }
+
+        .main-heading {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: flex;
+            gap: 60px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .experience-section {
+            background-color: rgba(180, 170, 140, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .experience-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .experience-left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .experience-right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .job-item {
+            background-color: transparent;
+        }
+
+        .job-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .company-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .job-duration {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .job-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .job-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .job-description li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        .skills-section h3,
+        .expertise-section h3,
+        .software-section h3,
+        .education-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .skills-section p,
+        .expertise-section p,
+        .software-section p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .education-degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .education-school {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .education-duration {
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .main-heading {
+                font-size: 36px;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-title::before {
+                display: none;
+            }
+        }
