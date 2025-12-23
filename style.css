@@ -165,6 +165,185 @@
             color: #555;
         }
 
+        /* --- UI Projects Section --- */
+        .ui-projects-section {
+            background-color: #E0DCC8;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ui-projects-title .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        /* Hero UI dengan Overlapping Images */
+        .ui-hero-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .ui-images-overlap {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .ui-image-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 80%;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .ui-image-front {
+            position: absolute;
+            bottom: 0;
+            right: -10%;
+            width: 90%;
+            height: 80%;
+            z-index: 2;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .ui-image-back img,
+        .ui-image-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ui-project-info {
+            padding: 20px 0;
+        }
+
+        .ui-project-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .ui-project-description {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .ui-feature-list {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Carousel untuk UI Projects */
+        .ui-carousel-section {
+            margin-top: 60px;
+        }
+
+        .carousel-label {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .ui-carousel-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ui-carousel-wrapper {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .ui-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 20px;
+        }
+
+        .ui-carousel-item {
+            min-width: calc(33.333% - 14px);
+            aspect-ratio: 2 / 3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #cccccc;
+        }
+
+        .ui-carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-btn {
+            background-color: rgba(120, 120, 120, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(80, 80, 80, 0.9);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:active {
+            transform: scale(0.95);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background-color: #444;
+            transform: scale(1.2);
+        }
+
         /* --- Card Khusus untuk "Personal Works" --- */
         .personal-works-section {
             background-color: #F1EFEF;
@@ -283,6 +462,24 @@
                 position: static;
                 margin-top: 20px;
             }
+
+            /* UI Projects Responsive */
+            .ui-projects-section {
+                padding: 30px;
+            }
+            .ui-hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .ui-images-overlap {
+                height: 400px;
+            }
+            .ui-project-title {
+                font-size: 2rem;
+            }
+            .ui-carousel-item {
+                min-width: calc(50% - 10px);
+            }
         }
 
         @media (max-width: 600px) {
@@ -305,5 +502,36 @@
             .fullscreen-header {
                 height: 50vh;
                 padding: 40px 20px 30px 20px;
+            }
+
+            /* UI Projects Mobile */
+            .ui-projects-section {
+                padding: 20px;
+                max-width: 100%;
+            }
+            .ui-images-overlap {
+                height: 300px;
+            }
+            .ui-image-ba    ck,
+            .ui-image-front {
+                width: 80%;
+                height: 75%;
+            }
+            .ui-project-title {
+                font-size: 1.5rem;
+            }
+            .ui-project-description {
+                font-size: 1rem;
+            }
+            .ui-carousel-item {
+                min-width: 100%;
+            }
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            .carousel-label {
+                font-size: 1.2rem;
             }
         }
