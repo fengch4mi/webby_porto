@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import BackgroundCircles from '../components/BackgroundCircles';
 import './Home.css';
 
@@ -43,7 +44,7 @@ function Home() {
             {t('home.description')}
           </motion.p>
           <motion.div className="cta-buttons" variants={fadeIn}>
-            <a href="/about" className="cta-button">{t('home.moreAboutMe')}</a>
+            <Link to="/about" className="cta-button">{t('home.moreAboutMe')}</Link>
             <a 
               href="https://drive.google.com/file/d/1wXZAM1c8SWobq5XRCozAcdV1GwRgRyeJ/view?usp=sharing" 
               className="cta-button-cv"

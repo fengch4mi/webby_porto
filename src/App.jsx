@@ -47,7 +47,7 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/webby_porto">
       <div className="App">
         <Header />
         <AnimatedRoutes />
