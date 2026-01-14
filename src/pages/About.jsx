@@ -106,7 +106,7 @@ function About() {
     >
       <motion.section className="about-section" variants={staggerContainer}>
         <motion.img 
-          src="/images/IMG_4896_Cropped.JPG" 
+          src={`${import.meta.env.BASE_URL}images/IMG_4896_Cropped.JPG`}
           alt="Hafizh Alexander" 
           className="profile-image"
           variants={fadeIn}

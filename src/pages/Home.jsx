@@ -62,7 +62,7 @@ function Home() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <img src="/images/IMG_4896_Cropped.JPG" alt="Hafizh Alexander" className="profile-image" />
+          <img src={`${import.meta.env.BASE_URL}images/IMG_4896_Cropped.JPG`} alt="Hafizh Alexander" className="profile-image" />
         </motion.div>
       </motion.main>
     </>

@@ -54,20 +54,20 @@ export const portfolioAPI = {
       setTimeout(() => {
         resolve({
           row1: [
-            { id: 1, src: "/images/ACover.png", alt: "Desain untuk media sosial" },
-            { id: 2, src: "/images/Cover_AZ8.png", alt: "Desain untuk media sosial" },
-            { id: 3, src: "/images/Artboard 1_SPL_Issue.png", alt: "Desain untuk media sosial" }
+            { id: 1, src: `${import.meta.env.BASE_URL}images/ACover.png`, alt: "Desain untuk media sosial" },
+            { id: 2, src: `${import.meta.env.BASE_URL}images/Cover_AZ8.png`, alt: "Desain untuk media sosial" },
+            { id: 3, src: `${import.meta.env.BASE_URL}images/Artboard 1_SPL_Issue.png`, alt: "Desain untuk media sosial" }
           ],
           marquee: [
-            { id: 4, src: "/images/FI Raidou Remastered - 1.png", alt: "Desain untuk media sosial" },
-            { id: 5, src: "/images/After Report CFXX  -  1.png", alt: "Desain untuk media sosial" },
-            { id: 6, src: "/images/cover art.png", alt: "Desain untuk media sosial" },
-            { id: 7, src: "/images/Frame 1.png", alt: "Desain untuk media sosial" }
+            { id: 4, src: `${import.meta.env.BASE_URL}images/FI Raidou Remastered - 1.png`, alt: "Desain untuk media sosial" },
+            { id: 5, src: `${import.meta.env.BASE_URL}images/After Report CFXX  -  1.png`, alt: "Desain untuk media sosial" },
+            { id: 6, src: `${import.meta.env.BASE_URL}images/cover art.png`, alt: "Desain untuk media sosial" },
+            { id: 7, src: `${import.meta.env.BASE_URL}images/Frame 1.png`, alt: "Desain untuk media sosial" }
           ],
           row3: [
-            { id: 8, src: "/images/Artboard_2.png", alt: "Desain untuk media sosial" },
-            { id: 9, src: "/images/Artboard 1.png", alt: "Desain untuk media sosial" },
-            { id: 10, src: "/images/01_cover_isogai01.png", alt: "Desain untuk media sosial" }
+            { id: 8, src: `${import.meta.env.BASE_URL}images/Artboard_2.png`, alt: "Desain untuk media sosial" },
+            { id: 9, src: `${import.meta.env.BASE_URL}images/Artboard 1.png`, alt: "Desain untuk media sosial" },
+            { id: 10, src: `${import.meta.env.BASE_URL}images/01_cover_isogai01.png`, alt: "Desain untuk media sosial" }
           ]
         });
       }, 100);
@@ -81,16 +81,16 @@ export const portfolioAPI = {
         resolve({
           hero: {
             images: [
-              { id: 1, src: "/images/UI Projects/Rectangle-1.png", alt: "UI Project Screenshot 1" },
-              { id: 2, src: "/images/UI Projects/Rectangle-2.png", alt: "UI Project Screenshot 2" }
+              { id: 1, src: `${import.meta.env.BASE_URL}images/UI Projects/Rectangle-1.png`, alt: "UI Project Screenshot 1" },
+              { id: 2, src: `${import.meta.env.BASE_URL}images/UI Projects/Rectangle-2.png`, alt: "UI Project Screenshot 2" }
             ],
             title: "StuPlan! - Android Study Planner App"
           },
           carousel: [
-            { id: 3, src: "/images/UI Projects/Rectangle-3.png", alt: "UI Project 3" },
-            { id: 4, src: "/images/UI Projects/Rectangle-4.png", alt: "UI Project 4" },
-            { id: 5, src: "/images/UI Projects/Rectangle-5.png", alt: "UI Project 5" },
-            { id: 6, src: "/images/UI Projects/Rectangle-6.png", alt: "UI Project 6" }
+            { id: 3, src: `${import.meta.env.BASE_URL}images/UI Projects/Rectangle-3.png`, alt: "UI Project 3" },
+            { id: 4, src: `${import.meta.env.BASE_URL}images/UI Projects/Rectangle-4.png`, alt: "UI Project 4" },
+            { id: 5, src: `${import.meta.env.BASE_URL}images/UI Projects/Rectangle-5.png`, alt: "UI Project 5" },
+            { id: 6, src: `${import.meta.env.BASE_URL}images/UI Projects/Rectangle-6.png`, alt: "UI Project 6" }
           ]
         });
       }, 100);
@@ -103,14 +103,14 @@ export const portfolioAPI = {
       setTimeout(() => {
         resolve({
           row1: [
-            { id: 1, src: "/images/5th of march.png", alt: "Desain pribadi" },
-            { id: 2, src: "/images/memoris.png", alt: "Desain pribadi" },
-            { id: 3, src: "/images/MENJIWAISERA-02.png", alt: "Desain pribadi" }
+            { id: 1, src: `${import.meta.env.BASE_URL}images/5th of march.png`, alt: "Desain pribadi" },
+            { id: 2, src: `${import.meta.env.BASE_URL}images/memoris.png`, alt: "Desain pribadi" },
+            { id: 3, src: `${import.meta.env.BASE_URL}images/MENJIWAISERA-02.png`, alt: "Desain pribadi" }
           ],
           row2: [
-            { id: 4, src: "/images/distortionnn.jpg", alt: "Desain poster pribadi", size: "large" },
-            { id: 5, src: "/images/metafantasy.png", alt: "Desain poster pribadi", size: "small" },
-            { id: 6, src: "/images/meizonit.jpg", alt: "Desain poster pribadi", size: "large" }
+            { id: 4, src: `${import.meta.env.BASE_URL}images/distortionnn.jpg`, alt: "Desain poster pribadi", size: "large" },
+            { id: 5, src: `${import.meta.env.BASE_URL}images/metafantasy.png`, alt: "Desain poster pribadi", size: "small" },
+            { id: 6, src: `${import.meta.env.BASE_URL}images/meizonit.jpg`, alt: "Desain poster pribadi", size: "large" }
           ]
         });
       }, 100);
