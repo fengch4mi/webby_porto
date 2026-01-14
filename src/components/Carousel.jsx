@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Carousel.css';
 
 function Carousel({ items }) {
@@ -59,7 +61,12 @@ function Carousel({ items }) {
         >
           {items.map((item) => (
             <div key={item.id} className="ui-carousel-item">
-              <img src={item.src} alt={item.alt} />
+              <LazyLoadImage
+                src={item.src}
+                alt={item.alt}
+                effect="blur"
+                threshold={100}
+              />
             </div>
           ))}
         </div>

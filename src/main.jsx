@@ -5,6 +5,7 @@ import ErrorBoundary from './components/ErrorBoundary'
 import './utils/i18n'
 import './styles/theme.css'
 import './styles/micro-interactions.css'
+import './styles/lazy-load.css'
 import './index.css'
 import App from './App.jsx'
 
