@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio"
+  },
+  "home": {
+    "greeting": "Hello There!",
+    "name": "I'm Hafizh Alexander",
+    "subtitle": "A Passionate Graphic Designer Exploring User Interface Design for Game Development.",
+    "description": "An Undergraduate at Surabaya State University. Currently a Third-year Informatics Student.",
+    "moreAboutMe": "More About Me",
+    "viewCV": "View My CV"
+  },
+  "about": {
+    "aboutTitle": "About Me!",
+    "whoIs": "So, Who's Hafizh Alexander?",
+    "description": "I'm a Freelance Graphic Designer currently enrolled at Surabaya State University pursuing a degree in Informatics. With a strong passion for design and technology, I specialize in creating visually compelling content for social media and various digital platforms. I've worked on several projects and currently working freelance at Atlus Info Indonesia, a community social media for Atlus.",
+    "designsMade": "Designs made",
+    "projectsDone": "Projects done",
+    "experienceTitle": "Experience",
+    "softSkills": "Soft Skills",
+    "softSkillsList": "Team Leadership, Communication, Organization Skills, Team Work, Time Management",
+    "expertise": "Expertise",
+    "expertiseList": "Graphic Design, Entry-level Content Writing, Entry-level Python",
+    "software": "Software",
+    "softwareList": "Adobe Photoshop, Figma, Adobe Illustrator, Python",
+    "education": "Education",
+    "degree": "Bachelor's Degree in Computer Science",
+    "school": "Surabaya State University (UNESA)",
+    "duration": "2023 - Present"
+  },
+  "portfolio": {
+    "subtitle": "Alexander's personalized portfolio",
+    "title": "Alex's Works",
+    "socialMedia": {
+      "title": "Social Media Designs",
+      "subtitle": "My freelance work on Atlus Info Indonesia as Editor!"
+    },
+    "uiProjects": {
+      "title": "UI/UX Projects",
+      "mainTitle": "StuPlan! - Android Study Planner App",
+      "description": "I designed StuPlan!, an Android-based application focused on simplicity and productivity. Key design decisions included",
+      "feature1": "Intuitive Dashboard: A clean summary of daily schedules and upcoming deadlines to reduce cognitive load",
+      "feature2": "Smart Reminders: Custom notification system for tasks and exams to ensure students never miss a due date.",
+      "feature3": "Progress Visualization: A dedicated Statistics Page using charts to track study time and task completion, motivating users to stay consistent.",
+      "moreWorks": "More UI Works"
+    },
+    "personalWorks": {
+      "title": "Personal Works"
+    }
+  }
+}

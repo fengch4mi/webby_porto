@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portofolio"
+  },
+  "home": {
+    "greeting": "Hello There!",
+    "name": "I'm Hafizh Alexander",
+    "subtitle": "A Passionate Graphic Designer Exploring User Interface Design for Game Development.",
+    "description": "An Undergraduate at Surabaya State University. Currently a Third-year Informatics Student.",
+    "moreAboutMe": "More About Me",
+    "viewCV": "View My CV"
+  },
+  "about": {
+    "aboutTitle": "About Me!",
+    "whoIs": "So, Who's Hafizh Alexander?",
+    "description": "I'm a Freelance Graphic Designer currently enrolled at Surabaya State University pursuing a degree in Informatics. With a strong passion for design and technology, I specialize in creating visually compelling content for social media and various digital platforms. I've worked on several projects and currently working freelance at Atlus Info Indonesia, a community social media for Atlus.",
+    "designsMade": "Desain dibuat",
+    "projectsDone": "Proyek selesai",
+    "experienceTitle": "Pengalaman",
+    "softSkills": "Soft Skills",
+    "softSkillsList": "Kepemimpinan Tim, Komunikasi, Keterampilan Organisasi, Kerja Tim, Manajemen Waktu",
+    "expertise": "Keahlian",
+    "expertiseList": "Desain Grafis, Content Writing Level Pemula, Python Level Pemula",
+    "software": "Software",
+    "softwareList": "Adobe Photoshop, Figma, Adobe Illustrator, Python",
+    "education": "Pendidikan",
+    "degree": "Sarjana Ilmu Komputer",
+    "school": "Universitas Negeri Surabaya (UNESA)",
+    "duration": "2023 - Sekarang"
+  },
+  "portfolio": {
+    "subtitle": "Portofolio pribadi Alexander",
+    "title": "Karya Alex",
+    "socialMedia": {
+      "title": "Desain Media Sosial",
+      "subtitle": "Pekerjaan freelance saya di Atlus Info Indonesia sebagai Editor!"
+    },
+    "uiProjects": {
+      "title": "Proyek UI/UX",
+      "mainTitle": "StuPlan! - Aplikasi Planner Belajar Android",
+      "description": "Saya mendesain StuPlan!, aplikasi berbasis Android yang fokus pada kesederhanaan dan produktivitas. Keputusan desain utama meliputi",
+      "feature1": "Dashboard Intuitif: Ringkasan jadwal harian dan deadline yang akan datang untuk mengurangi beban kognitif",
+      "feature2": "Pengingat Pintar: Sistem notifikasi khusus untuk tugas dan ujian agar siswa tidak ketinggalan jadwal.",
+      "feature3": "Visualisasi Progress: Halaman Statistik khusus menggunakan grafik untuk melacak waktu belajar dan penyelesaian tugas, memotivasi pengguna untuk tetap konsisten.",
+      "moreWorks": "Karya UI Lainnya"
+    },
+    "personalWorks": {
+      "title": "Karya Personal"
+    }
+  }
+}
