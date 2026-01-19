@@ -7,15 +7,23 @@ const QUALITY = 80; // WebP quality (0-100)
 
 async function convertImage(inputPath, outputPath) {
   try {
+    const ext = extname(inputPath).toLowerCase();
+    const isPng = ext === '.png';
+    
+    // For PNG, preserve alpha channel (transparency)
+    const webpOptions = isPng 
+      ? { quality: QUALITY, alphaQuality: 100, lossless: false }
+      : { quality: QUALITY };
+    
     await sharp(inputPath)
-      .webp({ quality: QUALITY })
+      .webp(webpOptions)
       .toFile(outputPath);
     
     const inputStats = await stat(inputPath);
     const outputStats = await stat(outputPath);
     const savings = ((1 - outputStats.size / inputStats.size) * 100).toFixed(1);
     
-    console.log(`✓ ${basename(inputPath)} → ${basename(outputPath)} (${savings}% smaller)`);
+    console.log(`✓ ${basename(inputPath)} → ${basename(outputPath)} (${savings}% smaller)${isPng ? ' [transparency preserved]' : ''}`);
   } catch (error) {
     console.error(`✗ Failed to convert ${inputPath}:`, error.message);
   }
