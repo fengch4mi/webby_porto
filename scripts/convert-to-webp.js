@@ -9,10 +9,16 @@ async function convertImage(inputPath, outputPath) {
   try {
     const ext = extname(inputPath).toLowerCase();
     const isPng = ext === '.png';
+    const fileName = basename(inputPath);
+    
+    // For UI mockup PNGs (Rectangle-*), use lossless to preserve transparency perfectly
+    const isUIMockup = fileName.startsWith('Rectangle-');
     
     // For PNG, preserve alpha channel (transparency)
     const webpOptions = isPng 
-      ? { quality: QUALITY, alphaQuality: 100, lossless: false }
+      ? (isUIMockup 
+          ? { quality: 90, alphaQuality: 100, lossless: true } // Lossless for UI mockups
+          : { quality: QUALITY, alphaQuality: 100, lossless: false })
       : { quality: QUALITY };
     
     await sharp(inputPath)
@@ -23,7 +29,8 @@ async function convertImage(inputPath, outputPath) {
     const outputStats = await stat(outputPath);
     const savings = ((1 - outputStats.size / inputStats.size) * 100).toFixed(1);
     
-    console.log(`✓ ${basename(inputPath)} → ${basename(outputPath)} (${savings}% smaller)${isPng ? ' [transparency preserved]' : ''}`);
+    const label = isPng ? (isUIMockup ? ' [lossless + transparency]' : ' [transparency preserved]') : '';
+    console.log(`✓ ${basename(inputPath)} → ${basename(outputPath)} (${savings}% smaller)${label}`);
   } catch (error) {
     console.error(`✗ Failed to convert ${inputPath}:`, error.message);
   }

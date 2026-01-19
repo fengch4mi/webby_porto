@@ -31,8 +31,8 @@
 /* Ensure images fit properly within containers */
 .lazy-load-image-background img,
 span.lazy-load-image-background > img {
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 60%;
   object-fit: cover;
 }
 

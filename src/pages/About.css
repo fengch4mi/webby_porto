@@ -14,8 +14,8 @@
 }
 
 .profile-image {
-  width: 280px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -227,8 +227,8 @@
   }
 
   .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
   }
 
   .main-heading {

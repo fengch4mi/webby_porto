@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import LazyImage from '../components/LazyImage';
+import OptimizedImage from '../components/OptimizedImage';
 import { portfolioAPI } from '../api/portfolioAPI';
 import { SkeletonAbout } from '../components/SkeletonLoader';
 import './About.css';
@@ -107,12 +107,12 @@ function About() {
     >
       <motion.section className="about-section" variants={staggerContainer}>
         <motion.div variants={fadeIn}>
-          <LazyImage
+          <OptimizedImage
             src={`${import.meta.env.BASE_URL}images/IMG_4896_Cropped.JPG`}
             alt="Hafizh Alexander"
             className="profile-image"
-            effect="blur"
-            threshold={100}
+            loading="eager"
+            blurIn={true}
           />
         </motion.div>
         

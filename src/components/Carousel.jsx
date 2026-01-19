@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import LazyImage from './LazyImage';
+import OptimizedImage from './OptimizedImage';
 import './Carousel.css';
 
 function Carousel({ items }) {
@@ -60,11 +60,11 @@ function Carousel({ items }) {
         >
           {items.map((item) => (
             <div key={item.id} className="ui-carousel-item">
-              <LazyImage
+              <OptimizedImage
                 src={item.src}
                 alt={item.alt}
-                effect="blur"
-                threshold={100}
+                blurIn={true}
+                loading="lazy"
               />
             </div>
           ))}
