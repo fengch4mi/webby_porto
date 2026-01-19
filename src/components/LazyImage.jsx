@@ -10,6 +10,7 @@ const LazyImage = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [imageSrc, setImageSrc] = useState(src);
   const imgRef = useRef(null);
 
   useEffect(() => {
@@ -34,6 +35,25 @@ const LazyImage = ({
     };
   }, [threshold]);
 
+  // Convert image path to WebP with fallback
+  useEffect(() => {
+    if (isInView && src) {
+      // Try WebP version first
+      const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+      
+      // Test if WebP exists
+      const img = new Image();
+      img.onload = () => {
+        setImageSrc(webpSrc);
+      };
+      img.onerror = () => {
+        // Fallback to original if WebP doesn't exist
+        setImageSrc(src);
+      };
+      img.src = webpSrc;
+    }
+  }, [isInView, src]);
+
   const handleLoad = () => {
     setIsLoaded(true);
   };
@@ -44,7 +64,7 @@ const LazyImage = ({
     <span className={wrapperClass} ref={imgRef}>
       {isInView && (
         <img
-          src={src}
+          src={imageSrc}
           alt={alt}
           className={className}
           onLoad={handleLoad}
