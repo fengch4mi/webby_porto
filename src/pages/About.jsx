@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import { portfolioAPI } from '../api/portfolioAPI';
 import { SkeletonAbout } from '../components/SkeletonLoader';
 import './About.css';
