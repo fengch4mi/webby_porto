@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LazyImage from './LazyImage';
 import './Carousel.css';
 
 function Carousel({ items }) {
@@ -60,7 +60,7 @@ function Carousel({ items }) {
         >
           {items.map((item) => (
             <div key={item.id} className="ui-carousel-item">
-              <LazyLoadImage
+              <LazyImage
                 src={item.src}
                 alt={item.alt}
                 effect="blur"

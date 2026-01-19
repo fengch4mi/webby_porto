@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LazyImage from '../components/LazyImage';
 import { portfolioAPI } from '../api/portfolioAPI';
 import { SkeletonAbout } from '../components/SkeletonLoader';
 import './About.css';
@@ -107,7 +107,7 @@ function About() {
     >
       <motion.section className="about-section" variants={staggerContainer}>
         <motion.div variants={fadeIn}>
-          <LazyLoadImage
+          <LazyImage
             src={`${import.meta.env.BASE_URL}images/IMG_4896_Cropped.JPG`}
             alt="Hafizh Alexander"
             className="profile-image"

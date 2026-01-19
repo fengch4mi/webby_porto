@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LazyImage from '../components/LazyImage';
 import { portfolioAPI } from '../api/portfolioAPI';
 import { SkeletonGrid } from '../components/SkeletonLoader';
 import Carousel from '../components/Carousel';
@@ -112,7 +112,7 @@ function Portfolio() {
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                     >
-                      <LazyLoadImage
+                      <LazyImage
                         src={img.src}
                         alt={img.alt}
                         effect="blur"
@@ -128,7 +128,7 @@ function Portfolio() {
                     {/* Duplicate items for seamless loop */}
                     {[...socialMedia.marquee, ...socialMedia.marquee].map((img, index) => (
                       <div key={`${img.id}-${index}`} className="placeholder aspect-4-5">
-                        <LazyLoadImage
+                        <LazyImage
                           src={img.src}
                           alt={img.alt}
                           effect="opacity"
@@ -150,7 +150,7 @@ function Portfolio() {
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                     >
-                      <LazyLoadImage
+                      <LazyImage
                         src={img.src}
                         alt={img.alt}
                         effect="blur"
@@ -193,7 +193,7 @@ function Portfolio() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                      <LazyLoadImage
+                      <LazyImage
                         src={uiProjects.hero.images[0].src}
                         alt={uiProjects.hero.images[0].alt}
                         effect="blur"
@@ -207,7 +207,7 @@ function Portfolio() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: 0.5 }}
                     >
-                      <LazyLoadImage
+                      <LazyImage
                         src={uiProjects.hero.images[1].src}
                         alt={uiProjects.hero.images[1].alt}
                         effect="blur"
@@ -281,7 +281,7 @@ function Portfolio() {
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                     >
-                      <LazyLoadImage
+                      <LazyImage
                         src={img.src}
                         alt={img.alt}
                         effect="blur"
@@ -309,7 +309,7 @@ function Portfolio() {
                       transition={{ delay: index * 0.15 }}
                       whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                     >
-                      <LazyLoadImage
+                      <LazyImage
                         src={img.src}
                         alt={img.alt}
                         effect="blur"

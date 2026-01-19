@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import BackgroundCircles from '../components/BackgroundCircles';
+import LazyImage from '../components/LazyImage';
 import './Home.css';
 
 const fadeIn = {
@@ -62,7 +63,7 @@ function Home() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <LazyLoadImage
+          <LazyImage
             src="/images/IMG_4896_Cropped.JPG"
             alt="Hafizh Alexander"
             className="profile-image"
