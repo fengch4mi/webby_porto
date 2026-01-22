@@ -10,12 +10,26 @@
     "subtitle": "A Passionate Graphic Designer Exploring User Interface Design for Game Development.",
     "description": "An Undergraduate at Surabaya State University. Currently a Third-year Informatics Student.",
     "moreAboutMe": "More About Me",
-    "viewCV": "View My CV"
+    "viewCV": "View My CV",
+    "featured": {
+      "title": "Karya Pilihan",
+      "subtitle": "Showcase proyek terbaik saya",
+      "viewMore": "Lihat Proyek",
+      "viewAllWorks": "Lihat Semua Karya",
+      "stuplan": {
+        "subtitle": "Aplikasi Planner Belajar Android",
+        "description": "Aplikasi produktivitas yang dirancang untuk membantu siswa mengelola jadwal belajar dengan interface yang intuitif dan clean."
+      }
+    }
   },
   "about": {
     "aboutTitle": "About Me!",
     "whoIs": "So, Who's Hafizh Alexander?",
-    "description": "I'm a Freelance Graphic Designer currently enrolled at Surabaya State University pursuing a degree in Informatics. With a strong passion for design and technology, I specialize in creating visually compelling content for social media and various digital platforms. I've worked on several projects and currently working freelance at Atlus Info Indonesia, a community social media for Atlus.",
+    "description": [
+      "Saya adalah mahasiswa S1 Teknik Informatika di Universitas Negeri Surabaya yang memiliki hasrat besar untuk membangun produk digital yang tidak hanya andal secara performa, tetapi juga memikat secara visual.",
+      "Perjalanan karir saya berada di titik temu antara logika dan estetika. Dari sisi teknis, saya telah mengasah keahlian sebagai React & Back-End Developer melalui program intensif Dicoding Academy, di mana saya berhasil mengembangkan aplikasi web yang tangguh seperti 'LearnCheck'. Saya fasih berbicara dalam bahasa pengembang—menguasai JavaScript, Node.js, dan integrasi API.",
+      "Di saat yang sama, saya juga berkembang di dunia kreatif. Sebagai Creative Team Lead di Atlus Info Indonesia, saya mengelola strategi visual dan memimpin tim untuk mendorong lebih dari 5.000+ interaksi (engagement) setiap bulannya. Baik saat sedang melakukan debugging kode maupun merancang desain high-fidelity di Figma, tujuan saya tetap satu: menciptakan pengalaman digital yang mulus dan berorientasi pada pengguna (user-centric)."
+    ],
     "designsMade": "Desain dibuat",
     "projectsDone": "Proyek selesai",
     "experienceTitle": "Pengalaman",

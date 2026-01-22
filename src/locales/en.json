@@ -10,12 +10,26 @@
     "subtitle": "A Passionate Graphic Designer Exploring User Interface Design for Game Development.",
     "description": "An Undergraduate at Surabaya State University. Currently a Third-year Informatics Student.",
     "moreAboutMe": "More About Me",
-    "viewCV": "View My CV"
+    "viewCV": "View My CV",
+    "featured": {
+      "title": "Featured Works",
+      "subtitle": "A showcase of my best projects",
+      "viewMore": "View Project",
+      "viewAllWorks": "View All Works",
+      "stuplan": {
+        "subtitle": "Android Study Planner App",
+        "description": "A productivity app designed to help students manage their study schedules with an intuitive and clean interface."
+      }
+    }
   },
   "about": {
     "aboutTitle": "About Me!",
     "whoIs": "So, Who's Hafizh Alexander?",
-    "description": "I'm a Freelance Graphic Designer currently enrolled at Surabaya State University pursuing a degree in Informatics. With a strong passion for design and technology, I specialize in creating visually compelling content for social media and various digital platforms. I've worked on several projects and currently working freelance at Atlus Info Indonesia, a community social media for Atlus.",
+    "description": [
+      "I am an Informatics Undergraduate at Universitas Negeri Surabaya with a passion for building digital products that look as good as they perform.",
+      "My journey sits at the intersection of logic and aesthetics. On the technical side, I have honed my skills as a React & Back-End Developer through the intensive Dicoding Academy cohort , where I built robust web applications like 'LearnCheck'. I speak the language of developers—fluent in JavaScript, Node.js, and API integration.",
+      "Simultaneously, I thrive in the creative world. As a Creative Team Lead at Atlus Info Indonesia , I manage visual strategies and lead a team to drive over 5,000+ monthly engagements. Whether I am debugging code or crafting high-fidelity designs in Figma, my goal remains the same: to create seamless, user-centric experiences."
+    ],
     "designsMade": "Designs made",
     "projectsDone": "Projects done",
     "experienceTitle": "Experience",

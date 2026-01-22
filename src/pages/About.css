@@ -61,6 +61,14 @@
   transition: color 0.3s ease;
 }
 
+.description p {
+  margin-bottom: 16px;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
 .stats {
   display: flex;
   gap: 60px;

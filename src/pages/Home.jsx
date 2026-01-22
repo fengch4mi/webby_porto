@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import BackgroundCircles from '../components/BackgroundCircles';
-import OptimizedImage from '../components/OptimizedImage';
 import './Home.css';
 
 const fadeIn = {
@@ -22,6 +21,15 @@ const staggerChildren = {
 
 function Home() {
   const { t } = useTranslation();
+
+  const featuredProject = {
+    id: 'stuplan',
+    title: 'StuPlan!',
+    subtitle: t('home.featured.stuplan.subtitle'),
+    description: t('home.featured.stuplan.description'),
+    image: `${import.meta.env.BASE_URL}images/UI Projects/Rectangle-1.webp`,
+    link: '/portfolio#ui-projects'
+  };
 
   return (
     <>
@@ -70,6 +78,45 @@ function Home() {
           />
         </motion.div>
       </motion.main>
+
+      {/* Featured Works Section */}
+      <motion.section 
+        className="featured-section"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <div className="featured-header">
+          <h2 className="featured-title">{t('home.featured.title')}</h2>
+          <p className="featured-subtitle">{t('home.featured.subtitle')}</p>
+        </div>
+
+        <motion.div 
+          className="featured-project"
+          whileHover={{ y: -8 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Link to={featuredProject.link} className="featured-project-link">
+            <div className="featured-image-wrapper">
+              <img
+                src={featuredProject.image}
+                alt={featuredProject.title}
+                className="featured-image"
+              />
+            </div>
+            <div className="featured-content">
+              <h3 className="featured-project-title">{featuredProject.title}</h3>
+              <p className="featured-project-subtitle">{featuredProject.subtitle}</p>
+              <p className="featured-project-description">{featuredProject.description}</p>
+              <span className="featured-view-more">{t('home.featured.viewMore')} →</span>
+            </div>
+          </Link>
+        </motion.div>
+
+        <Link to="/portfolio" className="view-all-button">
+          {t('home.featured.viewAllWorks')}
+        </Link>
+      </motion.section>
     </>
   );
 }

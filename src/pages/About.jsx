@@ -119,9 +119,14 @@ function About() {
         <motion.div className="about-content" variants={fadeIn}>
           <p className="about-title">{t('about.aboutTitle')}</p>
           <h1 className="main-heading">{t('about.whoIs')}</h1>
-          <p className="description">
-            {t('about.description')}
-          </p>
+          <div className="description">
+            {Array.isArray(t('about.description', { returnObjects: true }))
+              ? t('about.description', { returnObjects: true }).map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))
+              : <p>{t('about.description')}</p>
+            }
+          </div>
           
           <div className="stats">
             <motion.div className="stat-item" variants={fadeIn}>
