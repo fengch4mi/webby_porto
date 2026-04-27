@@ -106,6 +106,30 @@
   border-radius: 2px;
 }
 
+[data-theme='light'] .nav-links a {
+  color: #f7fbff;
+}
+
+[data-theme='light'] .nav-links a:hover {
+  color: var(--accent-warm);
+}
+
+[data-theme='light'] .nav-links a.active {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .nav-links a {
+  color: #f4fbfd;
+}
+
+[data-theme='dark'] .nav-links a:hover {
+  color: var(--accent-color);
+}
+
+[data-theme='dark'] .nav-links a.active {
+  color: #ffffff;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .nav-container {
