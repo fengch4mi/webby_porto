@@ -54,6 +54,21 @@
   transform: scale(1.05);
 }
 
+.ui-images-overlap .ui-image-back,
+.ui-images-overlap .ui-image-front {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ui-images-overlap:hover .ui-image-back {
+  transform: translate(-6px, -6px) rotate(-0.5deg);
+  box-shadow: var(--shadow-md);
+}
+
+.ui-images-overlap:hover .ui-image-front {
+  transform: translate(6px, -8px) rotate(0.8deg);
+  box-shadow: var(--shadow-lg);
+}
+
 /* Link Hover Underline Animation */
 .nav-links a {
   position: relative;

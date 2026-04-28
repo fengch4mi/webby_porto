@@ -160,8 +160,9 @@ function About() {
             <motion.div 
               className="skills-section"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h3>{t('about.softSkills')}</h3>
               <p>{t('about.softSkillsList')}</p>
@@ -170,8 +171,9 @@ function About() {
             <motion.div 
               className="expertise-section"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h3>{t('about.expertise')}</h3>
               <p>{t('about.expertiseList')}</p>
@@ -180,8 +182,9 @@ function About() {
             <motion.div 
               className="software-section"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h3>{t('about.software')}</h3>
               <p>{t('about.softwareList')}</p>
@@ -190,8 +193,9 @@ function About() {
             <motion.div 
               className="education-section"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <h3>{t('about.education')}</h3>
               <div className="education-degree">{t('about.degree')}</div>

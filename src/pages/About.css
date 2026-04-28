@@ -4,6 +4,9 @@
   padding: 40px 40px;
   width: 100%;
   min-height: calc(100vh - 100px);
+  background:
+    radial-gradient(700px 320px at 6% -10%, var(--accent-soft) 0%, transparent 60%),
+    radial-gradient(600px 280px at 94% 0%, var(--accent-warm-soft) 0%, transparent 55%);
 }
 
 .about-section {
@@ -19,6 +22,8 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  border: 4px solid var(--bg-card);
+  box-shadow: var(--shadow-md);
 }
 
 .about-content {
@@ -27,7 +32,7 @@
 
 .about-title {
   font-size: 14px;
-  color: var(--text-secondary);
+  color: var(--accent-color);
   margin-bottom: 10px;
   position: relative;
   transition: color 0.3s ease;
@@ -40,7 +45,7 @@
   top: 50%;
   width: 50px;
   height: 2px;
-  background-color: var(--text-primary);
+  background-color: var(--accent-warm);
   transition: background-color 0.3s ease;
 }
 
@@ -81,7 +86,7 @@
 .stat-number {
   font-size: 48px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--accent-strong);
   line-height: 1;
   transition: color 0.3s ease;
 }
@@ -94,7 +99,8 @@
 }
 
 .experience-section {
-  background-color: var(--bg-accent);
+  background: linear-gradient(145deg, var(--bg-accent), var(--bg-card));
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 40px;
   margin-top: 40px;
@@ -128,7 +134,12 @@
 }
 
 .job-item {
-  background-color: transparent;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-warm);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
 }
 
 .job-title, .education-section h3 {
@@ -175,8 +186,20 @@
   content: '-';
   position: absolute;
   left: 0;
-  color: var(--text-primary);
+  color: var(--accent-color);
   transition: color 0.3s ease;
+}
+
+.skills-section,
+.expertise-section,
+.software-section,
+.education-section {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
 }
 
 .skills-section h3,
