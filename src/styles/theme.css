@@ -1,6 +1,11 @@
 /* Dark Mode Variables */
 :root {
   /* Light Mode Colors */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   --bg-primary: #f6f1ea;
   --bg-secondary: #efe6da;
   --bg-tertiary: #e2d3c1;

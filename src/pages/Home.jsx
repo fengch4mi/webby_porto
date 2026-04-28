@@ -2,22 +2,11 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import BackgroundCircles from '../components/BackgroundCircles';
+import { createFadeInUp, createStagger } from '../utils/motion';
 import './Home.css';
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
-  transition: { duration: 0.5 }
-};
-
-const staggerChildren = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
+const fadeInUp = createFadeInUp(20, 0.5);
+const staggerChildren = createStagger(0.1);
 
 function Home() {
   const { t } = useTranslation();
@@ -42,17 +31,17 @@ function Home() {
         animate="animate"
         exit="exit"
       >
-        <motion.div className="hero-content" variants={fadeIn}>
-          <motion.h1 className="hero-title" variants={fadeIn}>
+        <motion.div className="hero-content" variants={fadeInUp}>
+          <motion.h1 className="hero-title" variants={fadeInUp}>
             {t('home.greeting')}<br />{t('home.name')}
           </motion.h1>
-          <motion.h2 className="hero-subtitle" variants={fadeIn}>
+          <motion.h2 className="hero-subtitle" variants={fadeInUp}>
             {t('home.subtitle')}
           </motion.h2>
-          <motion.p className="hero-description" variants={fadeIn}>
+          <motion.p className="hero-description" variants={fadeInUp}>
             {t('home.description')}
           </motion.p>
-          <motion.div className="cta-buttons" variants={fadeIn}>
+          <motion.div className="cta-buttons" variants={fadeInUp}>
             <Link to="/about" className="cta-button">{t('home.moreAboutMe')}</Link>
             <a 
               href="https://drive.google.com/file/d/1wXZAM1c8SWobq5XRCozAcdV1GwRgRyeJ/view?usp=sharing" 

@@ -2,23 +2,21 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import OptimizedImage from '../components/OptimizedImage';
+import InfoCard from '../components/InfoCard';
 import { portfolioAPI } from '../api/portfolioAPI';
 import { SkeletonAbout } from '../components/SkeletonLoader';
+import { createFadeInUp, createStagger } from '../utils/motion';
 import './About.css';
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
+const fadeInUp = createFadeInUp(20, 0.5);
+const staggerContainer = createStagger(0.1);
 
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
+const infoCardMotion = (delay) => ({
+  initial: fadeInUp.initial,
+  whileInView: fadeInUp.animate,
+  viewport: { once: true, amount: 0.2 },
+  transition: { ...fadeInUp.transition, delay }
+});
 
 function About() {
   const { t } = useTranslation();
@@ -39,6 +37,39 @@ function About() {
 
     fetchExperience();
   }, []);
+
+  const infoSections = [
+    {
+      key: 'soft-skills',
+      className: 'skills-section',
+      title: t('about.softSkills'),
+      body: <p>{t('about.softSkillsList')}</p>
+    },
+    {
+      key: 'expertise',
+      className: 'expertise-section',
+      title: t('about.expertise'),
+      body: <p>{t('about.expertiseList')}</p>
+    },
+    {
+      key: 'software',
+      className: 'software-section',
+      title: t('about.software'),
+      body: <p>{t('about.softwareList')}</p>
+    },
+    {
+      key: 'education',
+      className: 'education-section',
+      title: t('about.education'),
+      body: (
+        <>
+          <div className="education-degree">{t('about.degree')}</div>
+          <div className="education-school">{t('about.school')}</div>
+          <div className="education-duration">{t('about.duration')}</div>
+        </>
+      )
+    }
+  ];
 
   const renderExperienceLeft = () => {
     return experience.slice(0, 3).map((job, index) => (
@@ -106,7 +137,7 @@ function About() {
       exit="exit"
     >
       <motion.section className="about-section" variants={staggerContainer}>
-        <motion.div variants={fadeIn}>
+        <motion.div variants={fadeInUp}>
           <OptimizedImage
             src={`${import.meta.env.BASE_URL}images/IMG_4896_Cropped.JPG`}
             alt="Hafizh Alexander"
@@ -116,7 +147,7 @@ function About() {
           />
         </motion.div>
         
-        <motion.div className="about-content" variants={fadeIn}>
+        <motion.div className="about-content" variants={fadeInUp}>
           <p className="about-title">{t('about.aboutTitle')}</p>
           <h1 className="main-heading">{t('about.whoIs')}</h1>
           <div className="description">
@@ -129,11 +160,11 @@ function About() {
           </div>
           
           <div className="stats">
-            <motion.div className="stat-item" variants={fadeIn}>
+            <motion.div className="stat-item" variants={fadeInUp}>
               <div className="stat-number">150+</div>
               <div className="stat-label">{t('about.designsMade')}</div>
             </motion.div>
-            <motion.div className="stat-item" variants={fadeIn}>
+            <motion.div className="stat-item" variants={fadeInUp}>
               <div className="stat-number">5+</div>
               <div className="stat-label">{t('about.projectsDone')}</div>
             </motion.div>
@@ -156,52 +187,16 @@ function About() {
 
           <div className="experience-right">
             {renderExperienceRight()}
-            
-            <motion.div 
-              className="skills-section"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h3>{t('about.softSkills')}</h3>
-              <p>{t('about.softSkillsList')}</p>
-            </motion.div>
-
-            <motion.div 
-              className="expertise-section"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h3>{t('about.expertise')}</h3>
-              <p>{t('about.expertiseList')}</p>
-            </motion.div>
-
-            <motion.div 
-              className="software-section"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h3>{t('about.software')}</h3>
-              <p>{t('about.softwareList')}</p>
-            </motion.div>
-
-            <motion.div 
-              className="education-section"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <h3>{t('about.education')}</h3>
-              <div className="education-degree">{t('about.degree')}</div>
-              <div className="education-school">{t('about.school')}</div>
-              <div className="education-duration">{t('about.duration')}</div>
-            </motion.div>
+            {infoSections.map((section, index) => (
+              <InfoCard
+                key={section.key}
+                className={section.className}
+                title={section.title}
+                {...infoCardMotion(0.1 + index * 0.1)}
+              >
+                {section.body}
+              </InfoCard>
+            ))}
           </div>
         </div>
       </motion.section>

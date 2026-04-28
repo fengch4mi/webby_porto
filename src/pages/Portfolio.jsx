@@ -2,24 +2,15 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import OptimizedImage from '../components/OptimizedImage';
+import SectionTitle from '../components/SectionTitle';
 import { portfolioAPI } from '../api/portfolioAPI';
 import { SkeletonGrid } from '../components/SkeletonLoader';
 import Carousel from '../components/Carousel';
+import { createFadeInUp, createStagger } from '../utils/motion';
 import './Portfolio.css';
 
-const fadeIn = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
+const fadeInUp = createFadeInUp(30, 0.6);
+const staggerContainer = createStagger(0.1);
 
 function Portfolio() {
   const { t } = useTranslation();
@@ -94,15 +85,17 @@ function Portfolio() {
             initial="initial"
             animate="animate"
           >
-            <motion.div className="section-title-container" variants={fadeIn}>
-              <h2 className="section-title">{t('portfolio.socialMedia.title')}</h2>
-              <p className="section-subtitle">{t('portfolio.socialMedia.subtitle')}</p>
+            <motion.div className="section-title-container" variants={fadeInUp}>
+              <SectionTitle
+                title={t('portfolio.socialMedia.title')}
+                subtitle={t('portfolio.socialMedia.subtitle')}
+              />
             </motion.div>
 
             {/* Baris 1: Skala 1:1 */}
             {socialMedia && (
               <>
-                <motion.div className="image-grid grid-cols-3" variants={fadeIn}>
+                <motion.div className="image-grid grid-cols-3" variants={fadeInUp}>
                   {socialMedia.row1.map((img, index) => (
                     <motion.div 
                       key={img.id} 
@@ -140,7 +133,7 @@ function Portfolio() {
                 </div>
 
                 {/* Baris 3: Skala 4:5 */}
-                <motion.div className="image-grid grid-cols-3" variants={fadeIn}>
+                <motion.div className="image-grid grid-cols-3" variants={fadeInUp}>
                   {socialMedia.row3.map((img, index) => (
                     <motion.div 
                       key={img.id} 
@@ -172,7 +165,7 @@ function Portfolio() {
             transition={{ duration: 0.6 }}
           >
             <div className="section-title-container ui-projects-title">
-              <h2 className="section-title">{t('portfolio.uiProjects.title')}</h2>
+              <SectionTitle title={t('portfolio.uiProjects.title')} />
             </div>
 
             {/* Hero UI Project */}
@@ -258,7 +251,7 @@ function Portfolio() {
             transition={{ duration: 0.6 }}
           >
             <div className="section-title-container personal-works-title">
-              <h2 className="section-title">{t('portfolio.personalWorks.title')}</h2>
+              <SectionTitle title={t('portfolio.personalWorks.title')} />
             </div>
 
             {personalWorks && (
